@@ -1,16 +1,21 @@
 package com.dicoding.mysimplelogin
 
-class UserRepository(private val sesi: SessionManager) {
+import javax.inject.Inject
+import javax.inject.Singleton
 
-    companion object {
-        @Volatile
-        private var instance: UserRepository? = null
+@Singleton
+class UserRepository @Inject constructor(private val sesi: SessionManager) {
 
-        fun getInstance(sesi: SessionManager): UserRepository =
-            instance ?: synchronized(this) {
-                instance ?: UserRepository(sesi)
-            }
-    }
+//    hapus kode untuk membuat Singleton berikut
+//    companion object {
+//        @Volatile
+//        private var instance: UserRepository? = null
+//
+//        fun getInstance(sesi: SessionManager): UserRepository =
+//            instance ?: synchronized(this) {
+//                instance ?: UserRepository(sesi)
+//            }
+//    }
 
     fun loginUser(username: String) {
         sesi.createLoginSession()

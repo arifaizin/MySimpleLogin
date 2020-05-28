@@ -4,17 +4,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    @Inject
     lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
+        (application as MyApplication).appComponent.inject(this)
+
+//        hapus kode berikut
+//        val sesi = SessionManager(this)
+//        userRepository = UserRepository.getInstance(sesi)
 
         if (userRepository.isUserLogin()) {
             moveToHomeActivity()
