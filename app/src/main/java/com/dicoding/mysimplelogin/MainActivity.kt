@@ -12,10 +12,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        (application as MyApplication).appComponent.inject(this)
 
 //        hapus kode berikut
 //        val sesi = SessionManager(this)
