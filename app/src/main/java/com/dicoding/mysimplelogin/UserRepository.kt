@@ -1,10 +1,6 @@
 package com.dicoding.mysimplelogin
 
-import javax.inject.Inject
-import javax.inject.Singleton
-
-@Singleton
-class UserRepository @Inject constructor(private val sesi: SessionManager) {
+class UserRepository constructor(private val sesi: SessionManager) {
 
 //    hapus kode untuk membuat Singleton berikut
 //    companion object {

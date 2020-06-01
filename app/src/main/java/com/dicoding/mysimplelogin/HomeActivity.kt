@@ -4,15 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_home.*
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
 class HomeActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var userRepository: UserRepository
+    val userRepository: UserRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
