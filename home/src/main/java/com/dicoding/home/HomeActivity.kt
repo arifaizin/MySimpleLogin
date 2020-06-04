@@ -1,8 +1,10 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.core.SessionManager
+import com.dicoding.core.UserRepository
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -25,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun moveToMainActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, Class.forName("com.dicoding.mysimplelogin.MainActivity")))
         finish()
     }
 }

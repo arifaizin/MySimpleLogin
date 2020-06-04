@@ -1,4 +1,4 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.core
 
 class UserRepository(private val sesi: SessionManager) {
 
@@ -8,7 +8,8 @@ class UserRepository(private val sesi: SessionManager) {
 
         fun getInstance(sesi: SessionManager): UserRepository =
             instance ?: synchronized(this) {
-                instance ?: UserRepository(sesi)
+                instance
+                    ?: UserRepository(sesi)
             }
     }
 
