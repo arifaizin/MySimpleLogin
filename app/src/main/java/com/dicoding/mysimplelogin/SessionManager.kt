@@ -2,6 +2,10 @@ package com.dicoding.mysimplelogin
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKeys
+import com.securepreferences.SecurePreferences
 
 class SessionManager(context: Context) {
     companion object {
@@ -9,7 +13,19 @@ class SessionManager(context: Context) {
         const val KEY_USERNAME = "username"
     }
 
-    private var pref: SharedPreferences = context.getSharedPreferences("Session", Context.MODE_PRIVATE)
+    private var pref: SharedPreferences = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+        EncryptedSharedPreferences
+            .create(
+                "Session",
+                MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC),
+                context,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+    } else {
+        SecurePreferences(context)
+    }
+//    private var pref: SharedPreferences = context.getSharedPreferences("Session", Context.MODE_PRIVATE)
     private var editor: SharedPreferences.Editor = pref.edit()
 
     fun createLoginSession() {
