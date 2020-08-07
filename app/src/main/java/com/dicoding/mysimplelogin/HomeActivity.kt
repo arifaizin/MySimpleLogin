@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         val sesi = SessionManager(this)
         userRepository = UserRepository.getInstance(sesi)
 
-        tv_welcome.text = userRepository.getUser()
+        tv_welcome.text = "Welcome ${userRepository.getUser()}"
 
         btn_logout.setOnClickListener {
             userRepository.logoutUser()
