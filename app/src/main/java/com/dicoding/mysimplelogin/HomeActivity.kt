@@ -3,6 +3,8 @@ package com.dicoding.mysimplelogin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.core.SessionManager
+import com.dicoding.core.UserRepository
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -16,7 +18,7 @@ class HomeActivity : AppCompatActivity() {
         val sesi = SessionManager(this)
         userRepository = UserRepository.getInstance(sesi)
 
-        tv_welcome.text = userRepository.getUser()
+        tv_welcome.text = "Welcome ${userRepository.getUser()}"
 
         btn_logout.setOnClickListener {
             userRepository.logoutUser()
