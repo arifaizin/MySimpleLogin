@@ -45,6 +45,7 @@ class HomeActivity : AppCompatActivity() {
         val moduleChat = "chat"
         if (splitInstallManager.installedModules.contains(moduleChat)) {
             moveToChatActivity()
+            Toast.makeText(this, "Open module", Toast.LENGTH_SHORT).show()
         } else {
             val request = SplitInstallRequest.newBuilder()
                 .addModule(moduleChat)
