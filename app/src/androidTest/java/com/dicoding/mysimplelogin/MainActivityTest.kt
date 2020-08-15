@@ -14,7 +14,7 @@ class MainActivityTest : KoinTest{
     private val userRepository: UserRepository by inject()
     private val username = "dicoding"
 
-    @Before()
+    @Before
     fun before() {
         loadKoinModules(storageModule)
         userRepository.loginUser(username)
