@@ -1,10 +1,9 @@
 package com.dicoding.mysimplelogin
 
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.core.SessionManager
 import com.dicoding.core.UserRepository
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
