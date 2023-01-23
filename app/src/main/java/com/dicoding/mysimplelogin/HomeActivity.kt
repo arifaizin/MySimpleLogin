@@ -3,7 +3,8 @@ package com.dicoding.mysimplelogin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_home.*
+import androidx.appcompat.app.AppCompatActivity
+import com.dicoding.mysimplelogin.databinding.ActivityHomeBinding
 import org.koin.android.ext.android.inject
 
 class HomeActivity : AppCompatActivity() {
