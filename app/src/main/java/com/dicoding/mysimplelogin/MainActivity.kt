@@ -9,8 +9,8 @@ import com.dicoding.core.SessionManager
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var userRepository: UserRepository
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

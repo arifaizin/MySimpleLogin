@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
             moveToMainActivity()
         }
 
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             try {
 //                hapus kode berikut
 //                moveToChatActivity()
