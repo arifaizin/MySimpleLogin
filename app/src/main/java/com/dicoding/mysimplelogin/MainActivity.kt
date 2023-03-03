@@ -8,8 +8,8 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     @Inject
-    lateinit var binding: ActivityMainBinding
     lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {

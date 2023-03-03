@@ -7,6 +7,6 @@ import dagger.Provides
 
 @Module
 class StorageModule {
-    @Provides
-    fun provideSessionManager(context: Context): SessionManager = SessionManager(context)
+   @Provides
+   fun provideSessionManager(context: Context): SessionManager = SessionManager(context)
 }
