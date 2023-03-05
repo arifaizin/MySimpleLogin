@@ -17,7 +17,7 @@ class UserRepository(private val sesi: SessionManager) {
         sesi.saveToPreference(SessionManager.KEY_USERNAME, username)
     }
 
-    fun getUser() = "Welcome ${sesi.getFromPreference(SessionManager.KEY_USERNAME)}"
+    fun getUser() = sesi.getFromPreference(SessionManager.KEY_USERNAME)
 
     fun isUserLogin() = sesi.isLogin
 
